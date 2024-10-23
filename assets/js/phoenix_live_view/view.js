@@ -536,7 +536,7 @@ export default class View {
 
     formsToRecover.forEach(([oldForm, newForm], i) => {
       this.pendingForms.add(newForm.id)
-      this.pushFormRecovery(oldForm, newForm, template.content, () => {
+      this.pushFormRecovery(oldForm, newForm, template.content.firstElementChild, () => {
         this.pendingForms.delete(newForm.id)
         // we only call the callback once all forms have been recovered
         if(i === formsToRecover.length - 1){
